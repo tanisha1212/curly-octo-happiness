@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Build Your Resume</h1>
 
+  <!-- Multi-Step Form -->
+  <div class="form-container">
+    <form id="resumeForm">
+      <!-- Step 1: Contact Information -->
+      <div class="form-step active" id="contact-info">
+        <h2>Contact Information</h2>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number">
+        
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+      
+      <!-- Step 2: Work Experience -->
+      <div class="form-step" id="work-experience">
+        <h2>Work Experience</h2>
+        <label for="jobTitle">Job Title</label>
+        <input type="text" id="jobTitle" placeholder="Enter your job title">
+        
+        <label for="company">Company</label>
+        <input type="text" id="company" placeholder="Enter company name">
+        
+        <label for="jobDescription">Job Description</label>
+        <textarea id="jobDescription" placeholder="Describe your role"></textarea>
+        
+        <button type="button" onclick="prevStep()">Previous</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+      
+              <!-- Step 3: Education -->
+        <div class="form-step" id="education">
+          <h2>Education</h2>
+          <label for="school">School</label>
+          <input type="text" id="school" placeholder="Enter school name">
+          
+          <label for="degree">Degree</label>
+          <input type="text" id="degree" placeholder="Enter your degree">
+          
+          <label for="gradDate">Graduation Date</label>
+          <input type="text" id="gradDate" placeholder="Enter graduation date">
+          
+          <button type="button" onclick="prevStep()">Previous</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+        
+        <!-- Step 4: Skills -->
+        <div class="form-step" id="skills">
+          <h2>Skills</h2>
+          <label for="skills">List Your Skills</label>
+          <textarea id="skills" placeholder="Enter your skills, separated by commas"></textarea>
+          
+          <button type="button" onclick="prevStep()">Previous</button>
+          <button type="button" onclick="showPreview()">Preview Resume</button>
+        </div>
+    </form>
+  </div>
+  
+  <!-- Resume Preview Section -->
+  <div class="resume-preview" id="resumePreview">
+    <h2>Resume Preview</h2>
+    <div id="previewContent"></div>
+    <button onclick="downloadResume()">Download PDF</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
